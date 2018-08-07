@@ -1,6 +1,6 @@
 # 🍍 Ananas aus Caracas
 
-A simple roguelike based on the [Ondřej Žára's Rot.js tutorial](http://www.roguebasin.com/index.php?title=Rot.js_tutorial).
+A simple roguelike based on [Ondřej Žára's Rot.js tutorial](http://www.roguebasin.com/index.php?title=Rot.js_tutorial).
 
 ## Table of contents
 
