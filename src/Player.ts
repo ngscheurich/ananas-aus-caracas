@@ -84,6 +84,7 @@ class Player extends Actor implements IActor {
       this.game.engine.lock();
     } else {
       this.game.writeToLog("This box is empty. Bummer.");
+      this.game.map.cells[key] = "o";
     }
   }
 }
