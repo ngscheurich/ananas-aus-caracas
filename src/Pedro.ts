@@ -10,6 +10,7 @@ class Pedro extends Actor implements IActor {
   public act() {
     const toX = this.game.player.getX();
     const toY = this.game.player.getY();
+
     const passableCallback = (x: number, y: number): boolean => {
       return `${x},${y}` in this.game.map;
     };
@@ -24,7 +25,7 @@ class Pedro extends Actor implements IActor {
     astar.compute(this.x, this.y, pathCallback);
 
     path.shift();
-    if (path.length === 1) {
+    if (path.length === 0 || path.length === 1) {
       this.game.engine.lock();
       this.game.writeToLog("👹 Game over—you were captured by Pedro!");
     } else {
