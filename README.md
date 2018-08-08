@@ -1,6 +1,6 @@
 # 🍍 Ananas aus Caracas
 
-A simple roguelike based on the [RogueBasin Rot.js tutorial](http://www.roguebasin.com/index.php?title=Rot.js_tutorial).
+A simple roguelike based on [Ondřej Žára's Rot.js tutorial](http://www.roguebasin.com/index.php?title=Rot.js_tutorial).
 
 ## Table of contents
 
@@ -23,15 +23,3 @@ To spin up the dev server, just:
     $ yarn start
 
 You should now have a web server listening—and serving your game—at http://localhost:8080. Cool.
-
-## Production
-
-Ready to distribute your game to the ravenous masses?
-
-    $ yarn build
-
-This will make a production-ready version of your project in a directory called `dist`; toss it up on the Internet somewhere. [Netlify](https://www.netlify.com/) might be a good choice.
-
-## Licenses
-
-This project is [MIT © Nicholas Scheurich](https://github.com/ngscheurich/web-starter/blob/master/LICENSE).
