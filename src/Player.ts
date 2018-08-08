@@ -58,17 +58,18 @@ class Player extends Actor implements IActor {
     const newY = this.y + diff[1];
 
     const newKey = `${newX},${newY}`;
-    if (!(newKey in this.game.map)) {
+    if (!(newKey in this.game.map.cells)) {
       return;
     }
 
     this.game.display.draw(
       this.x,
       this.y,
-      this.game.map[`${this.x},${this.y}`]
+      this.game.map.cells[`${this.x},${this.y}`]
     );
     this.x = newX;
     this.y = newY;
+    this.game.map.pedro = `${this.x},${this.y}`;
     window.removeEventListener("keydown", this);
     this.draw();
     this.game.engine.unlock();
@@ -76,7 +77,7 @@ class Player extends Actor implements IActor {
 
   private checkBox() {
     const key = `${this.x},${this.y}`;
-    if (this.game.map[key] !== "*") {
+    if (this.game.map.cells[key] !== "*") {
       this.game.writeToLog("There is no box here…");
     } else if (key === this.game.ananas) {
       this.game.writeToLog("🍍 Hooray! You found an ananas and won the game.");

@@ -12,7 +12,7 @@ class Pedro extends Actor implements IActor {
     const toY = this.game.player.getY();
 
     const passableCallback = (x: number, y: number): boolean => {
-      return `${x},${y}` in this.game.map;
+      return `${x},${y}` in this.game.map.cells;
     };
     const astar = new ROT.Path.AStar(toX, toY, passableCallback, {
       topology: 4,
@@ -34,10 +34,11 @@ class Pedro extends Actor implements IActor {
       this.game.display.draw(
         this.x,
         this.y,
-        this.game.map[`${this.x},${this.y}`]
+        this.game.map.cells[`${this.x},${this.y}`]
       );
       this.x = x;
       this.y = y;
+      this.game.map.player = `${this.x},${this.y}`;
       this.draw();
     }
   }
